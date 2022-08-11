@@ -32,7 +32,7 @@ v-row#register
 
 <script setup>
 import { reactive, ref } from 'vue'
-import { isEmail } from 'validator'
+// import { isEmail } from 'validator'
 import { api } from '@/plugins/axios'
 import { useRouter } from 'vue-router'
 import Swal from 'sweetalert2'
@@ -49,10 +49,10 @@ const form = reactive({
 })
 
 const rules = reactive({
-  email: [
-    v => !!v || '信箱必填',
-    v => isEmail(v) || '信箱格式錯誤'
-  ],
+  // email: [
+  //   v => !!v || '信箱必填',
+  //   v => isEmail(v) || '信箱格式錯誤'
+  // ],
   account: [
     v => !!v || '帳號必填',
     v => (v.length >= 4 && v.length <= 20) || '帳號長度為 4 到 20 個字',
@@ -86,3 +86,4 @@ const register = async () => {
   loading.value = false
 }
 </script>
+<script src="https://kit.fontawesome.com/2e1f6f0508.js" crossorigin="anonymous"></script>
